@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代高清魂斗罗 - Contra HD</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="1280" height="720"></canvas>
+        <div id="gameUI">
+            <div id="healthBar">
+                <div class="health-icon">❤️</div>
+                <div class="health-count">3</div>
+            </div>
+            <div id="weaponInfo">
+                <div class="weapon-name">机枪</div>
+                <div class="ammo-count">∞</div>
+            </div>
+            <div id="score">
+                <div class="score-label">得分</div>
+                <div class="score-value">0</div>
+            </div>
+        </div>
+        <div id="mobileControls" class="mobile-only">
+            <div class="control-pad">
+                <div class="dpad">
+                    <button class="dpad-btn up" data-key="ArrowUp">↑</button>
+                    <button class="dpad-btn down" data-key="ArrowDown">↓</button>
+                    <button class="dpad-btn left" data-key="ArrowLeft">←</button>
+                    <button class="dpad-btn right" data-key="ArrowRight">→</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn jump" data-key="Space">跳跃</button>
+                    <button class="action-btn shoot" data-key="KeyZ">射击</button>
+                    <button class="action-btn weapon" data-key="KeyX">切换武器</button>
+                </div>
+            </div>
+        </div>
+        <div id="startScreen" class="screen">
+            <div class="title">
+                <h1>现代高清魂斗罗</h1>
+                <h2>CONTRA HD</h2>
+            </div>
+            <div class="menu">
+                <button id="startGame" class="menu-btn">开始游戏</button>
+                <button id="showControls" class="menu-btn">操作说明</button>
+                <button id="showSettings" class="menu-btn">游戏设置</button>
+            </div>
+        </div>
+        <div id="pauseScreen" class="screen hidden">
+            <div class="pause-menu">
+                <h2>游戏暂停</h2>
+                <button id="resumeGame" class="menu-btn">继续游戏</button>
+                <button id="restartGame" class="menu-btn">重新开始</button>
+                <button id="backToMenu" class="menu-btn">返回主菜单</button>
+            </div>
+        </div>
+        <div id="gameOverScreen" class="screen hidden">
+            <div class="game-over-menu">
+                <h2>游戏结束</h2>
+                <div class="final-score">最终得分: <span id="finalScore">0</span></div>
+                <button id="restartFromGameOver" class="menu-btn">重新开始</button>
+                <button id="backToMenuFromGameOver" class="menu-btn">返回主菜单</button>
+            </div>
+        </div>
+        <div id="controlsScreen" class="screen hidden">
+            <div class="controls-info">
+                <h2>操作说明</h2>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <span class="key">方向键</span>
+                        <span class="action">移动角色</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">空格键</span>
+                        <span class="action">跳跃</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">Z键</span>
+                        <span class="action">射击</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">X键</span>
+                        <span class="action">切换武器</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">P键</span>
+                        <span class="action">暂停游戏</span>
+                    </div>
+                </div>
+                <button id="backFromControls" class="menu-btn">返回</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/utils/Vector2.js"></script>
+    <script src="js/utils/EventBus.js"></script>
+    <script src="js/core/GameEngine.js"></script>
+    <script src="js/core/InputManager.js"></script>
+    <script src="js/core/ResourceManager.js"></script>
+    <script src="js/core/AudioManager.js"></script>
+    <script src="js/core/Renderer.js"></script>
+    <script src="js/core/PhysicsEngine.js"></script>
+    <script src="js/entities/Entity.js"></script>
+    <script src="js/entities/Player.js"></script>
+    <script src="js/entities/Enemy.js"></script>
+    <script src="js/entities/Bullet.js"></script>
+    <script src="js/entities/Weapon.js"></script>
+    <script src="js/entities/Powerup.js"></script>
+    <script src="js/systems/CollisionSystem.js"></script>
+    <script src="js/systems/WeaponSystem.js"></script>
+    <script src="js/systems/EnemyAI.js"></script>
+    <script src="js/levels/Level.js"></script>
+    <script src="js/levels/Level1.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
